@@ -33,15 +33,15 @@
 export default {
     mounted() {
         // let timeIncrease = 0
-        const paths = this.$el.querySelectorAll("svg > path")
-        paths.forEach(path => {
-            let finish = path.getTotalLength()
-            path.style.strokeDasharray = finish
-            path.style.strokeDashoffset = finish
+        const paths = this.$el.querySelectorAll("svg > path");
+        paths.forEach((path) => {
+            let finish = path.getTotalLength();
+            path.style.strokeDasharray = finish;
+            path.style.strokeDashoffset = finish;
 
             // path.style.animation = `strokeAnimation 2s ease`
-        })
-    }
+        });
+    },
 };
 </script>
 
@@ -54,7 +54,23 @@ svg {
 }
 
 svg > path:nth-child(1) {
-    animation: strokeAnimation 2s ease 0.3s;
+    animation: strokeAnimation forwards 2s ease;
+}
+
+svg > path:nth-child(2) {
+    animation: strokeAnimation forwards 2s ease 0.3s;
+}
+
+svg > path:nth-child(3) {
+    animation: strokeAnimation forwards 2s ease 0.6s;
+}
+
+svg > path:nth-child(4) {
+    animation: strokeAnimation forwards 2s ease 0.9s;
+}
+
+svg {
+    animation: fillStroke 2s forwards ease 1s;
 }
 
 @keyframes strokeAnimation {
@@ -63,4 +79,13 @@ svg > path:nth-child(1) {
     }
 }
 
+@keyframes fillStroke {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: white;
+    }
+}
 </style>
