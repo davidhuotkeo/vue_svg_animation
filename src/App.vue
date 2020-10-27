@@ -1,16 +1,17 @@
 <template>
   <div id="main">
-      <StrokeAnimation></StrokeAnimation>
+      <StrokeMorph></StrokeMorph>
   </div>
 </template>
 
 <script>
-import StrokeAnimation from "./components/StrokeAnimation"
+// import StrokeAnimation from "./components/StrokeAnimation"
+import StrokeMorph from "./components/CodeMorph"
 
 export default {
   name: 'App',
   components: {
-    StrokeAnimation
+    StrokeMorph
   }
 }
 </script>
