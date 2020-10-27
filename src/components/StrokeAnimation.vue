@@ -32,20 +32,15 @@
 <script>
 export default {
     mounted() {
-        let timeIncrease = 0
+        // let timeIncrease = 0
         const paths = this.$el.querySelectorAll("svg > path")
         paths.forEach(path => {
             let finish = path.getTotalLength()
             path.style.strokeDasharray = finish
             path.style.strokeDashoffset = finish
 
-            path.style.animation = `strokeAnimation 2s ease`
-            timeIncrease += 0.3
-            console.log(timeIncrease)
+            // path.style.animation = `strokeAnimation 2s ease`
         })
-    },
-    beforeMount() {
-      console.log("updated")
     }
 };
 </script>
@@ -56,6 +51,10 @@ svg {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+svg > path:nth-child(1) {
+    animation: strokeAnimation 2s ease 0.3s;
 }
 
 @keyframes strokeAnimation {
